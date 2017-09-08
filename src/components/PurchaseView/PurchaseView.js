@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Label from 'material-ui-icons/Label';
@@ -99,7 +99,7 @@ function PurchaseView(props) {
           SHARE
         </Button>
       </div>
-      <Typography type="title" className={classes.title} className={classes.highlights}>
+      <Typography type="title" className={classes.title} >
         product highlights
       </Typography>
       <div>

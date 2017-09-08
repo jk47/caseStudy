@@ -1,20 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Card, { CardActions, CardContent } from 'material-ui/Card';
-import Button from 'material-ui/Button';
-import Typography from 'material-ui/Typography';
-import { grey } from 'material-ui/colors';
 import Slider from 'react-slick';
 
 function SampleNextArrow(props) {
   const {className, style, onClick} = props
   return (
+
     <div
       className={className}
-      style={{...style, display: 'block', background: 'black'}}
+      style={{...style, display: 'block', background: 'grey'}}
       onClick={onClick}
-    ></div>
+    > </div>
   );
 }
 
@@ -23,7 +20,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{...style, display: 'block', background: 'black'}}
+      style={{...style, display: 'block', background: 'grey'}}
       onClick={onClick}
     ></div>
   );
@@ -31,15 +28,24 @@ function SamplePrevArrow(props) {
 
 const styles = theme => ({
   style: {
-    width: '100%',
-    maxWidth: 500,
+    width: '90%',
+    maxWidth: 400,
     margin: 'auto',
     display: 'block'
   },
   image: {
     display:'block',
-    margin:'auto'
+    margin:'auto',
+    marginBottom: 40,
+    width: '90%'
   },
+  slider: {
+    width: '90%',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: '1em'
+  }
 
 });
 
@@ -57,15 +63,15 @@ function ProductView(props) {
 
   return (
     <div className={classes.style}>
-      <Typography type="headline" gutterBottom align="center">
+      <p type="headline" className={classes.title}>
         {props.title}
-      </Typography>
+      </p>
 
-      <Slider {...settings}>
-        <div><img src={props.primaryImage} alt=" ninja blender" className={classes.image} /></div>
-      {props.alternateImages.map(function(imgSrc) {
+      <Slider {...settings} className={classes.slider}>
+        <div key="uniqueKey"><img src={props.primaryImage} alt=" ninja blender" className={classes.image} /></div>
+      {props.alternateImages.map(function(imgSrc, index) {
           // not sure how to render with strong
-          return <div><img src={imgSrc.image} alt="ninja blender" className={classes.image} /></div>;
+          return <div key={index}><img src={imgSrc.image} alt="ninja blender" className={classes.image} /></div>;
         })
       }
       </Slider>

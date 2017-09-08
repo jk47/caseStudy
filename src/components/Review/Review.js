@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Card, { CardActions, CardContent } from 'material-ui/Card';
+import Card, { CardContent } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
 import { grey } from 'material-ui/colors';
@@ -11,13 +11,14 @@ import Star from 'material-ui-icons/Star';
 
 const styles = theme => ({
   card: {
-    width: '50%',
-    minWidth: 275,
+    width: '60%',
+    minWidth: 175,
     maxWidth: 275,
     backgroundColor: grey[200],
     margin: 20,
     display: 'inline-block',
     textAlign: 'left',
+    verticalAlign: 'top',
   },
   bullet: {
     display: 'inline-block',
@@ -39,7 +40,8 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   cardDiv: {
-    textAlign: 'center'
+    textAlign: 'center',
+    marginTop:-40,
   },
   button: {
     margin: theme.spacing.unit,

@@ -25,12 +25,24 @@ function ProductPage(props) {
   return (
     <div className={classes.root}>
     <Grid container spacing={24} className={classes.grid}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
 
           <ProductView title={data.CatalogEntryView[0].title}
           primaryImage={data.CatalogEntryView[0].Images[0].PrimaryImage[0].image}
           alternateImages={data.CatalogEntryView[0].Images[0].AlternateImages} />
 
+
+
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <PurchaseView price={data.CatalogEntryView[0].Offers[0].OfferPrice[0].formattedPriceValue}
+            promo1={data.CatalogEntryView[0].Promotions[0].Description[0].shortDescription.toLowerCase()}
+            promo2={data.CatalogEntryView[0].Promotions[1].Description[0].shortDescription}
+            highlights={data.CatalogEntryView[0].ItemDescription[0].features}
+            purchasingChannelCode={data.CatalogEntryView[0].purchasingChannelCode}>
+          </PurchaseView>
+        </Grid>
+        <Grid item xs={12} sm={6}>
           <Review proTitle="PRO" proDescription="most helpful 4-5 star review"
           proReviewHeader={data.CatalogEntryView[0].CustomerReview[0].Pro[0].title}
           proReviewBody={data.CatalogEntryView[0].CustomerReview[0].Pro[0].review}
@@ -41,15 +53,8 @@ function ProductPage(props) {
           conReviewBody={data.CatalogEntryView[0].CustomerReview[0].Con[0].review}
           conScreenName={data.CatalogEntryView[0].CustomerReview[0].Con[0].screenName}
           conDate={data.CatalogEntryView[0].CustomerReview[0].Con[0].datePosted}/>
-
         </Grid>
-        <Grid item xs={6}>
-          <PurchaseView price={data.CatalogEntryView[0].Offers[0].OfferPrice[0].formattedPriceValue}
-            promo1={data.CatalogEntryView[0].Promotions[0].Description[0].shortDescription.toLowerCase()}
-            promo2={data.CatalogEntryView[0].Promotions[1].Description[0].shortDescription}
-            highlights={data.CatalogEntryView[0].ItemDescription[0].features}
-            purchasingChannelCode={data.CatalogEntryView[0].purchasingChannelCode}>
-          </PurchaseView>
+        <Grid item xs={12} sm={6}>
         </Grid>
       </Grid>
       </div>
