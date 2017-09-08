@@ -7,7 +7,6 @@ import Typography from 'material-ui/Typography';
 import { grey } from 'material-ui/colors';
 import Moment from 'react-moment';
 import Divider from 'material-ui/Divider';
-import Star from 'material-ui-icons/Star';
 
 const styles = theme => ({
   card: {

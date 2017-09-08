@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import Slider from 'react-slick';
+import Slider from 'nuka-carousel';
 
 function SampleNextArrow(props) {
   const {className, style, onClick} = props
@@ -36,7 +36,7 @@ const styles = theme => ({
   image: {
     display:'block',
     margin:'auto',
-    marginBottom: 40,
+    marginBottom: 80,
     width: '90%'
   },
   slider: {
@@ -52,7 +52,7 @@ const styles = theme => ({
 function ProductView(props) {
   const classes = props.classes;
   var settings = {
-      dots: true,
+      dots: false,
       infinite: true,
       speed: 500,
       slidesToShow: 1,
@@ -68,10 +68,10 @@ function ProductView(props) {
       </p>
 
       <Slider {...settings} className={classes.slider}>
-        <div key="uniqueKey"><img src={props.primaryImage} alt=" ninja blender" className={classes.image} /></div>
+        <img src={props.primaryImage} alt=" ninja blender" className={classes.image} />
       {props.alternateImages.map(function(imgSrc, index) {
           // not sure how to render with strong
-          return <div key={index}><img src={imgSrc.image} alt="ninja blender" className={classes.image} /></div>;
+          return <img src={imgSrc.image} alt="ninja blender" className={classes.image} />;
         })
       }
       </Slider>
