@@ -1,5 +1,7 @@
 import React from "react";
 import ProductPage from "./ProductPage";
+import { shallow } from 'enzyme';
+import { Provider } from 'react-redux'
 
 describe("ProductPage", () => {
   let props;
@@ -7,13 +9,6 @@ describe("ProductPage", () => {
 
 
   beforeEach(() => {
-    window.matchMedia = window.matchMedia || function() {
-    return {
-        matches : false,
-        addListener : function() {},
-        removeListener: function() {}
-    };
-};
     props = {
       wallpaperPath: undefined,
       userInfoMessage: undefined,
@@ -22,7 +17,9 @@ describe("ProductPage", () => {
   });
 
   it("always renders a div", () => {
-    const divs = lockScreen().find("div");
-    expect(divs.length).toBeGreaterThan(0);
+    const div = document.createElement('div')
+    shallow(
+      <Provider><ProductPage /></Provider>,div
+    )
   });
 });

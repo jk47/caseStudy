@@ -1,22 +1,20 @@
 import React from "react";
+import { shallow } from 'enzyme';
+import { Provider } from 'react-redux'
 import ProductView from "./ProductView";
 
 describe("ProductView", () => {
   let props;
-  const productView = ProductView;
-
-
   beforeEach(() => {
-
     props = {
-      wallpaperPath: undefined,
-      userInfoMessage: undefined,
-      onUnlocked: undefined,
+      something: undefined,
     };
   });
 
   it("always renders a div", () => {
-    const divs = lockScreen().find("div");
-    expect(divs.length).toBeGreaterThan(0);
+    const div = document.createElement('div')
+    shallow(
+      <Provider><ProductView /></Provider>,div
+    )
   });
 });
