@@ -23,6 +23,7 @@ const styles = theme => ({
     display: 'flex',
     flexWrap: 'wrap',
     marginTop: 10,
+    verticalAlign: 'middle'
   },
   input: {
     margin: theme.spacing.unit,
@@ -69,6 +70,10 @@ const styles = theme => ({
   divider: {
     marginTop: '10px',
     width: '70%',
+  },
+  quantityButton: {
+    margin: 10,
+    background: 'lightgrey'
   }
 
 });
@@ -93,15 +98,18 @@ function PurchaseView(props) {
       </Typography>
       <Divider className={classes.divider}/>
       <div className={classes.container}>
-        <Input
-          type = "number"
-          placeholder="Quantity"
-          className={classes.input}
-          value={props.quantity}
-          inputProps={{
-            'aria-label': 'Quantity',
-          }}
-          />
+        <p>quantity:</p>
+        <div>
+          <Button onClick={() => props.updateQuantity('plus')}
+          className={classes.quantityButton}>
+          +
+          </Button>
+          {props.quantityProp}
+          <Button onClick={() => props.updateQuantity('minus')}
+          className={classes.quantityButton}>
+          -
+          </Button>
+        </div>
       </div>
       <div className={classes.margin }>
         {(() => {
