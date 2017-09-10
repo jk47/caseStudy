@@ -34,8 +34,19 @@ const styles = theme => ({
   margin: {
     marginTop: 15,
     marginBottom: 15
-  }
-
+  },
+  returnPolicy: {
+    borderLeft: '1px solid gray',
+    fontSize: '12px',
+    maxWidth: '50%',
+    display: 'inline-block',
+    paddingLeft: 10
+  },
+  return: {
+    display: 'inline-block',
+    paddingRight:10,
+    verticalAlign: 'middle'
+  },
 
 });
 
@@ -85,9 +96,10 @@ function PurchaseView(props) {
             })
         ()}
       </div>
-      <Typography type="subheading" className={classes.title}>
-        returns
-      </Typography>
+      <div>
+        <h5 className={classes.return}>returns</h5>
+        <p className={classes.returnPolicy}>This item must be returned within 30 days of the ship date. See return policy for details. Prices, promotions, styles and availability may vary by store and online.</p>
+      </div>
       <div className={classes.margin}>
         <Button raised  className={classes.button}>
           ADD TO REGISTRY
