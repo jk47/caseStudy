@@ -6,6 +6,7 @@ import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import { red } from 'material-ui/colors';
 import Input from 'material-ui/Input/Input';
+import Divider from 'material-ui/Divider';
 
 
 const redColor = red[500];
@@ -21,6 +22,7 @@ const styles = theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    marginTop: 10,
   },
   input: {
     margin: theme.spacing.unit,
@@ -64,6 +66,10 @@ const styles = theme => ({
     paddingRight:10,
     verticalAlign: 'middle'
   },
+  divider: {
+    marginTop: '10px',
+    width: '70%',
+  }
 
 });
 
@@ -78,17 +84,20 @@ function PurchaseView(props) {
         {props.price}
         <Typography type="caption" >Online Price</Typography>
       </Typography>
+      <Divider className={classes.divider}/>
       <Typography className={classes.textColor} type="subheading" gutterBottom>
         <Label className={classes.icon} />   {props.promo1}
       </Typography>
       <Typography className={classes.textColor} type="subheading" gutterBottom>
         <Label className={classes.icon} />   {props.promo2}
       </Typography>
+      <Divider className={classes.divider}/>
       <div className={classes.container}>
         <Input
           type = "number"
           placeholder="Quantity"
           className={classes.input}
+          value={props.quantity}
           inputProps={{
             'aria-label': 'Quantity',
           }}

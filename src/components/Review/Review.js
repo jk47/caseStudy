@@ -107,10 +107,9 @@ function SimpleCard(props) {
           <Typography component="p">
             {props.proReviewBody}
           </Typography>
+          <br />
           <Typography type="caption" gutterBottom>
-            <Button color="primary" className={classes.button}>
-              - {props.proScreenName}
-            </Button>
+            <a href='#'>{props.proScreenName}</a>&nbsp;
             <Moment format="MMMM DD, YYYY">{props.proDate}</Moment>
           </Typography>
         </CardContent>
@@ -135,9 +134,7 @@ function SimpleCard(props) {
           </Typography>
           <br />
           <Typography type="caption" gutterBottom >
-            <Button color="primary" className={classes.button}>
-              - {props.conScreenName}
-            </Button>
+            <a href="#">{props.conScreenName}</a>&nbsp;
             <Moment format="MMMM DD, YYYY">{props.conDate}</Moment>
           </Typography>
         </CardContent>

@@ -39,7 +39,8 @@ function ProductPage(props) {
             promo1={data.CatalogEntryView[0].Promotions[0].Description[0].shortDescription.toLowerCase()}
             promo2={data.CatalogEntryView[0].Promotions[1].Description[0].shortDescription}
             highlights={data.CatalogEntryView[0].ItemDescription[0].features}
-            purchasingChannelCode={data.CatalogEntryView[0].purchasingChannelCode}>
+            purchasingChannelCode={data.CatalogEntryView[0].purchasingChannelCode}
+>
           </PurchaseView>
         </Grid>
         <Grid item xs={12} sm={6}>
