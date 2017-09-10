@@ -7,6 +7,7 @@ import Button from 'material-ui/Button';
 import { red } from 'material-ui/colors';
 import Input from 'material-ui/Input/Input';
 
+
 const redColor = red[500];
 const styles = theme => ({
   icon: {
@@ -24,8 +25,24 @@ const styles = theme => ({
   input: {
     margin: theme.spacing.unit,
   },
-  button: {
+  pickUpInStore: {
     margin: theme.spacing.unit,
+    width: '40%',
+    maxWidth: 225,
+    background: 'black',
+    color: 'white',
+  },
+  addToCart: {
+    margin: theme.spacing.unit,
+    width: '40%',
+    maxWidth: 225,
+    background: 'red',
+    color: 'white'
+  },
+  secondaryButton: {
+    margin: theme.spacing.unit,
+    width: '25%',
+    maxWidth: 150
   },
   highlights: {
     marginTop: 30,
@@ -69,7 +86,8 @@ function PurchaseView(props) {
       </Typography>
       <div className={classes.container}>
         <Input
-          placeholder="Enter Quantity"
+          type = "number"
+          placeholder="Quantity"
           className={classes.input}
           inputProps={{
             'aria-label': 'Quantity',
@@ -80,7 +98,7 @@ function PurchaseView(props) {
         {(() => {
                 if (showPickUpInStore){
                   return (
-                  <Button raised className={classes.button}  >
+                  <Button raised className={classes.pickUpInStore}  >
                     PICK UP IN STORE
                   </Button>);
                 }
@@ -89,7 +107,7 @@ function PurchaseView(props) {
         {(() => {
                   if (showAddToCart){
                     return (
-                    <Button raised className={classes.button}  >
+                    <Button raised className={classes.addToCart}  >
                       ADD TO CART
                     </Button>);
                   }
@@ -98,16 +116,18 @@ function PurchaseView(props) {
       </div>
       <div>
         <h5 className={classes.return}>returns</h5>
-        <p className={classes.returnPolicy}>This item must be returned within 30 days of the ship date. See return policy for details. Prices, promotions, styles and availability may vary by store and online.</p>
+        <p className={classes.returnPolicy}>This item must be returned within
+        30 days of the ship date. See return policy for details. Prices, promotions,
+        styles and availability may vary by store and online.</p>
       </div>
       <div className={classes.margin}>
-        <Button raised  className={classes.button}>
+        <Button raised  className={classes.secondaryButton}>
           ADD TO REGISTRY
         </Button>
-        <Button raised  className={classes.button}  >
+        <Button raised  className={classes.secondaryButton}  >
           ADD TO LIST
         </Button>
-        <Button raised  className={classes.button} >
+        <Button raised  className={classes.secondaryButton} >
           SHARE
         </Button>
       </div>

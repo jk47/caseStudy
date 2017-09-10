@@ -7,6 +7,8 @@ import Typography from 'material-ui/Typography';
 import { grey } from 'material-ui/colors';
 import Moment from 'react-moment';
 import Divider from 'material-ui/Divider';
+import Star from 'material-ui-icons/Star';
+import StarBorder from 'material-ui-icons/StarBorder';
 
 const styles = theme => ({
   card: {
@@ -15,6 +17,8 @@ const styles = theme => ({
     maxWidth: 275,
     backgroundColor: grey[200],
     margin: 20,
+    marginleft:0,
+    marginRight:0,
     display: 'inline-block',
     textAlign: 'left',
     verticalAlign: 'top',
@@ -45,6 +49,29 @@ const styles = theme => ({
   button: {
     margin: theme.spacing.unit,
   },
+  stars: {
+    width: '60%',
+    minWidth: 175,
+    maxWidth: 275,
+    display: 'inline-block',
+    color: 'black',
+    textAlign: 'left',
+
+  },
+  reviews: {
+    width: '60%',
+    minWidth: 175,
+    maxWidth: 275,
+    display: 'inline-block',
+    color: 'black',
+    textAlign: 'right'
+  },
+  red: {
+    color:'red'
+  },
+  redSmall: {
+    color:'red',
+  }
 });
 
 function SimpleCard(props) {
@@ -53,6 +80,16 @@ function SimpleCard(props) {
 
   return (
     <div className={classes.cardDiv}>
+      <div>
+
+        <div className={classes.stars}>
+          <Star className={classes.red}/><Star className={classes.red}/><Star className={classes.red}/>
+          <Star className={classes.red}/><Star className={classes.red}/>  overall
+        </div>
+        <div className={classes.reviews}>
+          view all 14 reviews
+        </div>
+      </div>
       <Card className={classes.card}>
         <CardContent>
           <Typography type="headline" component="h1" className={classes.title}>
@@ -62,6 +99,8 @@ function SimpleCard(props) {
             {props.proDescription}
           </Typography>
            <Divider />
+           <Star className={classes.redSmall}/><Star className={classes.redSmall}/><Star className={classes.redSmall}/>
+           <Star className={classes.redSmall}/><Star className={classes.redSmall}/>
           <Typography type="body1" className={classes.pos}>
             {props.proReviewHeader}
           </Typography>
@@ -86,6 +125,8 @@ function SimpleCard(props) {
             {props.conDescription}
           </Typography>
            <Divider />
+           <Star className={classes.redSmall}/><StarBorder /><StarBorder />
+           <StarBorder /><StarBorder />
           <Typography type="body1" className={classes.pos}>
             {props.conReviewHeader}
           </Typography>
