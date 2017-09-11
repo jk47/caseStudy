@@ -3,28 +3,6 @@ import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Slider from 'nuka-carousel';
 
-function SampleNextArrow(props) {
-  const {className, style, onClick} = props
-  return (
-
-    <div
-      className={className}
-      style={{...style, display: 'block', background: 'grey'}}
-      onClick={onClick}
-    > </div>
-  );
-}
-
-function SamplePrevArrow(props) {
-  const {className, style, onClick} = props
-  return (
-    <div
-      className={className}
-      style={{...style, display: 'block', background: 'grey'}}
-      onClick={onClick}
-    ></div>
-  );
-}
 
 const styles = theme => ({
   style: {
@@ -52,15 +30,6 @@ const styles = theme => ({
 
 function ProductView(props) {
   const classes = props.classes;
-  var settings = {
-      dots: false,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
-    };
 
   return (
     <div className={classes.style}>
@@ -68,12 +37,12 @@ function ProductView(props) {
         {props.title}
       </p>
 
-      <Slider {...settings} className={classes.slider}
+      <Slider  className={classes.slider}
       decorators={Slider.getDefaultProps().decorators.slice(0, 2)}>
-        <img src={props.primaryImage} alt=" ninja blender" className={classes.image} />
+        <img src={props.primaryImage} alt=" ninja blender" key="123" className={classes.image} />
       {props.alternateImages.map(function(imgSrc, index) {
           // not sure how to render with strong
-          return <img src={imgSrc.image} alt="ninja blender" className={classes.image} />;
+          return <img src={imgSrc.image} alt="ninja blender" key={index} className={classes.image} />;
         })
       }
       </Slider>

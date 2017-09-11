@@ -43,7 +43,6 @@ class ProductPage extends Component{
     this.setState({
       quantity: currentQuantity
     });
-    console.log(this.state.quantity);
   }
 
   render() {
