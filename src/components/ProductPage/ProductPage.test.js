@@ -1,10 +1,10 @@
 import React from "react";
 import ProductPage from "./ProductPage";
 import { mount, shallow } from 'enzyme';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-import reducer from '../../reducers/reducer'
-import { expect } from 'chai'
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducer from '../../reducers/reducer';
+import { expect } from 'chai';
 
 describe("ProductPage", () => {
   let props;
