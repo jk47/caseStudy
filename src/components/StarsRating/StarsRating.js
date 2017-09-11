@@ -22,7 +22,7 @@ function StarsRating(props) {
   for (var i = 0; i<plusStarsCount; i++) {
      plusStars.push(<Star className={classes.redSmall}/>);
   }
-  for (var i = 0; i<5-plusStarsCount; i++) {
+  for (i = 0; i<5-plusStarsCount; i++) {
      minusStars.push(<StarBorder />);
   }
 
