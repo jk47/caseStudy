@@ -2,13 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
 import Card, { CardContent } from 'material-ui/Card';
-import Button from 'material-ui/Button';
 import Typography from 'material-ui/Typography';
+import StarsRating from '../StarsRating/StarsRating'
 import { grey } from 'material-ui/colors';
 import Moment from 'react-moment';
 import Divider from 'material-ui/Divider';
-import Star from 'material-ui-icons/Star';
-import StarBorder from 'material-ui-icons/StarBorder';
 
 const styles = theme => ({
   card: {
@@ -83,8 +81,7 @@ function SimpleCard(props) {
       <div>
 
         <div className={classes.stars}>
-          <Star className={classes.red}/><Star className={classes.red}/><Star className={classes.red}/>
-          <Star className={classes.red}/><Star className={classes.red}/>  overall
+          <StarsRating overallRating={props.overallRating} /> overall
         </div>
         <div className={classes.reviews}>
           view all 14 reviews
@@ -99,8 +96,7 @@ function SimpleCard(props) {
             {props.proDescription}
           </Typography>
            <Divider />
-           <Star className={classes.redSmall}/><Star className={classes.redSmall}/><Star className={classes.redSmall}/>
-           <Star className={classes.redSmall}/><Star className={classes.redSmall}/>
+           <StarsRating overallRating={props.proStars}/>
           <Typography type="body1" className={classes.pos}>
             {props.proReviewHeader}
           </Typography>
@@ -124,8 +120,7 @@ function SimpleCard(props) {
             {props.conDescription}
           </Typography>
            <Divider />
-           <Star className={classes.redSmall}/><StarBorder /><StarBorder />
-           <StarBorder /><StarBorder />
+           <StarsRating overallRating={props.conStars} />
           <Typography type="body1" className={classes.pos}>
             {props.conReviewHeader}
           </Typography>

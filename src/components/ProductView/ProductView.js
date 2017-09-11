@@ -67,7 +67,8 @@ function ProductView(props) {
         {props.title}
       </p>
 
-      <Slider {...settings} className={classes.slider}>
+      <Slider {...settings} className={classes.slider}
+      decorators={Slider.getDefaultProps().decorators.slice(0, 2)}>
         <img src={props.primaryImage} alt=" ninja blender" className={classes.image} />
       {props.alternateImages.map(function(imgSrc, index) {
           // not sure how to render with strong

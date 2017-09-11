@@ -5,7 +5,6 @@ import Label from 'material-ui-icons/Label';
 import Typography from 'material-ui/Typography';
 import Button from 'material-ui/Button';
 import { red } from 'material-ui/colors';
-import Input from 'material-ui/Input/Input';
 import Divider from 'material-ui/Divider';
 
 

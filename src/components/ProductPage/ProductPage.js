@@ -71,15 +71,18 @@ class ProductPage extends Component{
       </Grid>
       <Grid item xs={12} sm={6}>
       <Review proTitle="PRO" proDescription="most helpful 4-5 star review"
+      overallRating={data.CatalogEntryView[0].CustomerReview[0].consolidatedOverallRating}
       proReviewHeader={data.CatalogEntryView[0].CustomerReview[0].Pro[0].title}
       proReviewBody={data.CatalogEntryView[0].CustomerReview[0].Pro[0].review}
       proScreenName={data.CatalogEntryView[0].CustomerReview[0].Pro[0].screenName}
       proDate={data.CatalogEntryView[0].CustomerReview[0].Pro[0].datePosted}
+      proStars={Number.parseInt(data.CatalogEntryView[0].CustomerReview[0].Pro[0].overallRating, 10)}
       conTitle="CON" conDescription="most helpful 1-2 star review"
       conReviewHeader={data.CatalogEntryView[0].CustomerReview[0].Con[0].title}
       conReviewBody={data.CatalogEntryView[0].CustomerReview[0].Con[0].review}
       conScreenName={data.CatalogEntryView[0].CustomerReview[0].Con[0].screenName}
-      conDate={data.CatalogEntryView[0].CustomerReview[0].Con[0].datePosted}/>
+      conDate={data.CatalogEntryView[0].CustomerReview[0].Con[0].datePosted}
+      conStars={Number.parseInt(data.CatalogEntryView[0].CustomerReview[0].Con[0].overallRating, 10)}/>
       </Grid>
       <Grid item xs={12} sm={6}>
       </Grid>
