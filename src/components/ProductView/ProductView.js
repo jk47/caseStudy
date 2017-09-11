@@ -41,6 +41,7 @@ const styles = theme => ({
   },
   slider: {
     width: '90%',
+    marginTop: 70,
   },
   title: {
     textAlign: 'center',
