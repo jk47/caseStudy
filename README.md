@@ -2,5 +2,7 @@
 
 # Setting up the Code
 `yarn install`
+
 `yarn start`
+
 `yarn test`
